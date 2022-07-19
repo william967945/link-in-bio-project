@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>William Liu - Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      VANTA.WAVES({
+        el: "#vanta",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x5c8ea0,
+        shininess: 50.00,
+        waveHeight: 10.00,
+        zoom: 0.65
+      })
+      setTimeout(() => {
+        const main = document.querySelector('main')
+        main.style.opacity = 1
+        main.style.filter = 'blur(0px)';
+      }, 500);
+    });
+  </script>
+</head>
+
+<body>
+  <div id="vanta"></div>
+  <main>
+    <header>
+      <img src="./images/WilliamLiu.JPG" />
+      <h1>@william967948</h1>
+    </header>
+    <ul>
+      <li>
+        <a href="https://www.facebook.com/profile.php?id=100004865142685">
+          <img src="./images/facebook.gif" alt="facebook" width="30">
+          Official Website
+        </a>
+      </li>
+      <!-- <li>
+        <a href="">
+          <img src="./images/twitter.svg" alt="Twitter" width="20">
+          project2
+        </a>
+      </li> -->
+      <li>
+        <a href="https://github.com/william967945">
+            <img class="github" src="./images/github.gif" alt="GitHub" width="30">
+          GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/william967945">
+          <img src="./images/linkedin.gif" alt="Linkedin" width="30">
+          Linkedin
+        </a>
+      </li>
+    </ul>
+  </main>
+</body>
+
+</html>
