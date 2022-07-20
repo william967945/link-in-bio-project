@@ -7,7 +7,9 @@
   <title>William Liu - Links</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./style.css">
-  
+
+
+
 </head>
 
 <body>
@@ -26,7 +28,7 @@
       </li>
       <li>
         <a href="https://github.com/william967945">
-            <img class="github" src="./images/github.gif" alt="GitHub" width="30">
+          <img class="github" src="./images/github.gif" alt="GitHub" width="30">
           GitHub
         </a>
       </li>
@@ -70,8 +72,14 @@
         main.style.filter = 'blur(0px)';
       }, 500);
     });
+
+    var x = document.getElementById("myAudio");
+    x.play();
   </script>
-  
+  <audio id="myAudio" autoplay loop>
+    <source src="./audio/ocean-wave-1.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 </body>
 
 </html>
