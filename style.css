@@ -16,8 +16,8 @@ header {
 }
 
 /* body { */
-    /* background: url(./images/bg01.jpg) no-repeat center center fixed; */
-    /* background-size: ; */
+/* background: url(./images/bg01.jpg) no-repeat center center fixed; */
+/* background-size: ; */
 /* }     */
 
 #vanta {
@@ -65,10 +65,6 @@ header>img:hover {
     transform: scale(1.5);
 }
 
-.github {
-    border-radius: 100%;
-}
-
 header>h1 {
     display: inline-block;
     font-size: 0.8em;
@@ -93,6 +89,7 @@ ul {
     margin: 0 auto;
     padding: 2em;
     max-width: 480px;
+    margin-top: -2em;
 }
 
 ul>li {
@@ -103,6 +100,31 @@ ul>li {
     padding: 1em;
     margin: 1.4em 0;
     box-shadow: rgb(28 32 93 / 24%) 0px 2px 8px 0px;
+    transition-duration: 0.4s;
+}
+
+.facebook:hover {
+    background-color: #4267B2;
+}
+
+.github:hover {
+    background-color: #171515;
+}
+
+#img-github {
+    border-radius: 100%;
+}
+
+.linkedin:hover {
+    background-color: #0e76a8 ;
+}
+
+.instagram:hover {
+    background-color: #d62976 ;
+}
+
+.gmail:hover {
+    background-color: #ed322c;
 }
 
 ul>li>a {
@@ -121,4 +143,70 @@ a {
 
 a:hover {
     transform: scale(1.5);
+    color: white;
 }
+
+ul>li>div>button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 0.5em;
+    color: black;
+    text-decoration: none;
+    transition: transform .2s;
+    border: none;
+    background-color: transparent;
+    margin: 0 auto;
+}
+
+button:hover {
+    transform: scale(1.5);
+    color: white;
+    
+}
+
+.tooltip {
+    position: relative;
+    display: flex;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 13em;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* .tooltip:hover .tooltiptext {
+    visibility: hidden;
+    opacity: 1;
+} */
+
+.tooltip .tooltiptext2 {
+    visibility: visible;
+    opacity: 1;
+}
+

@@ -17,29 +17,39 @@
       <h1>@william967948</h1>
     </header>
     <ul>
-      <li>
+      <li class="facebook" onmouseover="hoverFacebook();" onmouseout="unhoverFacebook();">
         <a href="https://www.facebook.com/profile.php?id=100004865142685">
-          <img src="./images/facebook.gif" alt="facebook" width="30">
+          <img id="img-facebook" src="./images/facebook.gif" alt="facebook" width="20">
           Facebook
         </a>
       </li>
-      <li>
+      <li class="github" onmouseover="hoverGithub();" onmouseout="unhoverGithub();">
         <a href="https://github.com/william967945">
-          <img class="github" src="./images/github.gif" alt="GitHub" width="30">
+          <img id="img-github" src="./images/github.gif" alt="GitHub" width="20">
           GitHub
         </a>
       </li>
-      <li>
+      <li class="linkedin" onmouseover="hoverLinkedin();" onmouseout="unhoverLinkedin();">
         <a href="https://www.linkedin.com/in/william967945">
-          <img src="./images/linkedin.gif" alt="Linkedin" width="30">
+          <img id="img-linkedin" src="./images/linkedin.gif" alt="Linkedin" width="20">
           Linkedin
         </a>
       </li>
-      <li>
-        <a href="">
-          <img src="./images/gmail-logo.gif" alt="Gmail" width="30">
-          william967948@gmail.com
+      <li class="instagram" onmouseover="hoverInstagram();" onmouseout="unhoverInstagram();">
+        <a href="https://www.instagram.com/c.han_liu">
+          <img id="img-instagram" src="./images/instagram-logo.gif" alt="Instagram" width="20">
+          Instagram
         </a>
+      </li>
+      <li class="gmail" onmouseover="hoverGmail();" onmouseout="unhoverGmail();">
+        <div class="tooltip">
+          <!-- <div class="tooltiptext" id="myTooltip"></div> -->
+          <span class="tooltiptext" id="myTooltip"></span>
+          <button id="gmail" onclick="myFunction();" onmouseout="outFunc();" >
+            <img id="img-gmail" src="./images/gmail-logo.gif" alt="Gmail" width="20">
+            william967948@gmail.com
+          </button>
+        </div>
       </li>
     </ul>
   </main>
@@ -70,11 +80,70 @@
       }, 500);
     });
 
+    function myFunction() {
+      var copyText = document.getElementById('gmail');
+
+      navigator.clipboard.writeText(copyText.textContent);
+
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.innerHTML = "Copied: " + copyText.textContent;
+      tooltip.className = "tooltiptext tooltiptext2";
+    }
+
+    function outFunc() {
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.innerHTML = "";
+      tooltip.className = "tooltiptext";
+    }
+
+    function hoverLinkedin() {
+      const elementLinkedin = document.getElementById('img-linkedin');
+      elementLinkedin.setAttribute('src', './images/linkedin-logo-colored.gif');
+    }
+
+    function hoverFacebook() {
+      const elementFacebook = document.getElementById('img-facebook');
+      elementFacebook.setAttribute('src', './images/facebook-logo-colored.gif');
+    }
+
+    function hoverGithub() {
+
+    }
+
+    function hoverInstagram() {
+      const elementInstagram = document.getElementById('img-instagram');
+      elementInstagram.setAttribute('src', './images/instagram-logo-colored.gif');
+    }
+
+    function hoverGmail() {
+      const elementGmail = document.getElementById('img-gmail');
+      elementGmail.setAttribute('src', './images/gmail-logo-colored.gif');
+    }
+
+    function unhoverLinkedin() {
+      const elementLinkedin = document.getElementById('img-linkedin');
+      elementLinkedin.setAttribute('src', './images/linkedin.gif');
+    }
+
+    function unhoverFacebook() {
+      const elementFacebook = document.getElementById('img-facebook');
+      elementFacebook.setAttribute('src', './images/facebook.gif');
+    }
+
+    function unhoverGithub() {
+
+    }
+
+    function unhoverInstagram() {
+      const elementInstagram = document.getElementById('img-instagram');
+      elementInstagram.setAttribute('src', './images/instagram-logo.gif');
+    }
+
+    function unhoverGmail() {
+      const elementGmail = document.getElementById('img-gmail');
+      elementGmail.setAttribute('src', './images/gmail-logo.gif');
+    }
   </script>
-  <!-- <audio controls id="myAudio" autoplay>
-    <source src="./audio/ocean-wave-1.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio> -->
 </body>
 
 </html>
