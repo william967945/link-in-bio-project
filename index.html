@@ -43,7 +43,6 @@
       </li>
       <li class="gmail" onmouseover="hover(this.className);" onmouseout="unhover(this.className);">
         <div class="tooltip">
-          <!-- <div class="tooltiptext" id="myTooltip"></div> -->
           <span class="tooltiptext" id="myTooltip"></span>
           <button id="gmail" onclick="myFunction();" onmouseout="outFunc();" >
             <img id="img-gmail" src="./images/gmail-logo.gif" alt="Gmail" width="20">
@@ -82,9 +81,8 @@
 
     function myFunction() {
       var copyText = document.getElementById('gmail');
-
-      navigator.clipboard.writeText(copyText.textContent);
-
+      const content = copyText.textContent.trim();
+      navigator.clipboard.writeText(content);
       var tooltip = document.getElementById("myTooltip");
       tooltip.innerHTML = "Copied: " + copyText.textContent;
       tooltip.className = "tooltiptext tooltiptext2";
