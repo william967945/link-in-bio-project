@@ -17,31 +17,31 @@
       <h1>@william967948</h1>
     </header>
     <ul>
-      <li class="facebook" onmouseover="hoverFacebook();" onmouseout="unhoverFacebook();">
+      <li class="facebook" onmouseover="hover(this.className);" onmouseout="unhover(this.className);">
         <a href="https://www.facebook.com/profile.php?id=100004865142685">
-          <img id="img-facebook" src="./images/facebook.gif" alt="facebook" width="20">
+          <img id="img-facebook" src="./images/facebook-logo.gif" alt="facebook" width="20">
           Facebook
         </a>
       </li>
-      <li class="github" onmouseover="hoverGithub();" onmouseout="unhoverGithub();">
+      <li class="github">
         <a href="https://github.com/william967945">
-          <img id="img-github" src="./images/github.gif" alt="GitHub" width="20">
+          <img id="img-github" src="./images/github-logo.gif" alt="GitHub" width="20">
           GitHub
         </a>
       </li>
-      <li class="linkedin" onmouseover="hoverLinkedin();" onmouseout="unhoverLinkedin();">
+      <li class="linkedin" onmouseover="hover(this.className);" onmouseout="unhover(this.className);">
         <a href="https://www.linkedin.com/in/william967945">
-          <img id="img-linkedin" src="./images/linkedin.gif" alt="Linkedin" width="20">
+          <img id="img-linkedin" src="./images/linkedin-logo.gif" alt="Linkedin" width="20">
           Linkedin
         </a>
       </li>
-      <li class="instagram" onmouseover="hoverInstagram();" onmouseout="unhoverInstagram();">
+      <li class="instagram" onmouseover="hover(this.className);" onmouseout="unhover(this.className);">
         <a href="https://www.instagram.com/c.han_liu">
           <img id="img-instagram" src="./images/instagram-logo.gif" alt="Instagram" width="20">
           Instagram
         </a>
       </li>
-      <li class="gmail" onmouseover="hoverGmail();" onmouseout="unhoverGmail();">
+      <li class="gmail" onmouseover="hover(this.className);" onmouseout="unhover(this.className);">
         <div class="tooltip">
           <!-- <div class="tooltiptext" id="myTooltip"></div> -->
           <span class="tooltiptext" id="myTooltip"></span>
@@ -64,8 +64,8 @@
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 500,
-        minWidth: 500,
+        minHeight: 600.00,
+        minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
         color: 0x5c8ea0,
@@ -96,52 +96,14 @@
       tooltip.className = "tooltiptext";
     }
 
-    function hoverLinkedin() {
-      const elementLinkedin = document.getElementById('img-linkedin');
-      elementLinkedin.setAttribute('src', './images/linkedin-logo-colored.gif');
+    function hover(className) {
+      const element = document.getElementById("img-"+className);
+      element.setAttribute('src', `./images/${className}-logo-colored.gif`);
     }
 
-    function hoverFacebook() {
-      const elementFacebook = document.getElementById('img-facebook');
-      elementFacebook.setAttribute('src', './images/facebook-logo-colored.gif');
-    }
-
-    function hoverGithub() {
-
-    }
-
-    function hoverInstagram() {
-      const elementInstagram = document.getElementById('img-instagram');
-      elementInstagram.setAttribute('src', './images/instagram-logo-colored.gif');
-    }
-
-    function hoverGmail() {
-      const elementGmail = document.getElementById('img-gmail');
-      elementGmail.setAttribute('src', './images/gmail-logo-colored.gif');
-    }
-
-    function unhoverLinkedin() {
-      const elementLinkedin = document.getElementById('img-linkedin');
-      elementLinkedin.setAttribute('src', './images/linkedin.gif');
-    }
-
-    function unhoverFacebook() {
-      const elementFacebook = document.getElementById('img-facebook');
-      elementFacebook.setAttribute('src', './images/facebook.gif');
-    }
-
-    function unhoverGithub() {
-
-    }
-
-    function unhoverInstagram() {
-      const elementInstagram = document.getElementById('img-instagram');
-      elementInstagram.setAttribute('src', './images/instagram-logo.gif');
-    }
-
-    function unhoverGmail() {
-      const elementGmail = document.getElementById('img-gmail');
-      elementGmail.setAttribute('src', './images/gmail-logo.gif');
+    function unhover(className) {
+      const element = document.getElementById("img-"+className);
+      element.setAttribute('src', `./images/${className}-logo.gif`);
     }
   </script>
 </body>
