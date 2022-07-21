@@ -7,10 +7,9 @@
   <title>William Liu - Links</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./style.css">
-  <!-- <script src="./index.js"></script> -->
 </head>
 
-<body>
+<body onload="changeColor();">
   <div id="vanta"></div>
   <main>
     <header>
@@ -18,34 +17,35 @@
       <h1>@william967948</h1>
     </header>
     <ul>
-      <li class="facebook" onmouseover="hover(this.className);" onmouseout="unhover(this.className);">
+      <li id="facebook" class="facebook" onmouseover="hover(this.id);" onmouseout="unhover(this.id);"
+        onclick="stopTextColor();">
         <a href="https://www.facebook.com/profile.php?id=100004865142685">
           <img id="img-facebook" src="./images/facebook-logo.gif" alt="facebook" width="20">
           Facebook
         </a>
       </li>
-      <li class="github">
+      <li id="github" class="github">
         <a href="https://github.com/william967945">
           <img id="img-github" src="./images/github-logo.gif" alt="GitHub" width="20">
           GitHub
         </a>
       </li>
-      <li class="linkedin" onmouseover="hover(this.className);" onmouseout="unhover(this.className);">
+      <li id="linkedin" class="linkedin" onmouseover="hover(this.id);" onmouseout="unhover(this.id);">
         <a href="https://www.linkedin.com/in/william967945">
           <img id="img-linkedin" src="./images/linkedin-logo.gif" alt="Linkedin" width="20">
           Linkedin
         </a>
       </li>
-      <li class="instagram" onmouseover="hover(this.className);" onmouseout="unhover(this.className);">
+      <li id="instagram" class="instagram" onmouseover="hover(this.id);" onmouseout="unhover(this.id);">
         <a href="https://www.instagram.com/c.han_liu">
           <img id="img-instagram" src="./images/instagram-logo.gif" alt="Instagram" width="20">
           Instagram
         </a>
       </li>
-      <li class="gmail" onmouseover="hover(this.className);" onmouseout="unhover(this.className);">
+      <li id="gmail" class="gmail" onmouseover="hover(this.id);" onmouseout="unhover(this.id);">
         <div class="tooltip">
           <span class="tooltiptext" id="myTooltip"></span>
-          <button id="gmail" onclick="myFunction();" onmouseout="outFunc();" >
+          <button id="button-gmail" onclick="myFunction();" onmouseout="outFunc();">
             <img id="img-gmail" src="./images/gmail-logo.gif" alt="Gmail" width="20">
             william967948@gmail.com
           </button>
@@ -81,7 +81,7 @@
     });
 
     function myFunction() {
-      var copyText = document.getElementById('gmail');
+      var copyText = document.getElementById('button-gmail');
       const content = copyText.textContent.trim();
       navigator.clipboard.writeText(content);
       var tooltip = document.getElementById("myTooltip");
@@ -104,14 +104,59 @@
       tooltip.className = "tooltiptext";
     }
 
-    function hover(className) {
-      const element = document.getElementById("img-"+className);
-      element.setAttribute('src', `./images/${className}-logo-colored.gif`);
+    function hover(id) {
+      const element = document.getElementById("img-" + id);
+      element.setAttribute('src', `./images/${id}-logo-colored.gif`);
+
     }
 
-    function unhover(className) {
-      const element = document.getElementById("img-"+className);
-      element.setAttribute('src', `./images/${className}-logo.gif`);
+    function unhover(id) {
+      const element = document.getElementById("img-" + id);
+      element.setAttribute('src', `./images/${id}-logo.gif`);
+      // element.style.backgroundColor = 'black';
+
+    }
+
+    var index = -1;
+
+    function incrementLoop() {
+      if (index >= 4) {
+        index = 0;
+      } else {
+        index += 1;
+      }
+    }
+
+    function changeColor() {
+      setInterval(incrementLoop, 2000);
+      nIntervId = setInterval(flashButton, 2000);
+      colorList();
+    }
+
+    const buttonList = document.querySelectorAll('li');
+    const color = [];
+
+    function colorList() {
+      buttonList.forEach(button => {
+        color.push(button.className);
+      });
+
+      buttonList.forEach(button => {
+        button.className = 'color-fffa';
+      });
+      return color;
+    }
+
+    function flashButton() {
+      console.log(buttonList[index]);
+      const element = buttonList[index];
+      console.log(color);
+      element.className = element.className === "color-fffa" ? `${color[index]}` : "color-fffa";
+      console.log(element.className);
+    }
+
+    function stopTextColor() {
+      clearInterval(nIntervId);
     }
   </script>
 </body>

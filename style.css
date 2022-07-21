@@ -62,6 +62,7 @@ header>img:hover {
     transform: scale(1.5);
 }
 
+
 header>h1 {
     display: inline-block;
     font-size: 0.8em;
@@ -88,9 +89,8 @@ ul {
     max-width: 480px;
     margin-top: -2em;
 }
-
+/* #facebook, #github, #linkedin, #instagram, #gmail */
 ul>li {
-    background-color: #fffa;
     backdrop-filter: blur(10px) saturate(260%) contrast(180%);
     -webkit-backdrop-filter: blur(10px) saturate(260%) contrast(180%);
     border-radius: 10em;
@@ -100,11 +100,35 @@ ul>li {
     transition-duration: 0.4s;
 }
 
-.facebook:hover {
+.color-fffa {
+    background-color: #fffa;
+}
+
+.facebook {
     background-color: #4267B2;
 }
 
-.github:hover {
+.github {
+    background-color: #171515;
+}
+
+.linkedin {
+    background-color: #0e76a8;
+}
+
+.instagram {
+    background-color: #d62976;
+}
+
+.gmail {
+    background-color: #ed322c;
+}
+
+#facebook:hover {
+    background-color: #4267B2;
+}
+
+#github:hover {
     background-color: #171515;
 }
 
@@ -112,15 +136,15 @@ ul>li {
     border-radius: 100%;
 }
 
-.linkedin:hover {
+#linkedin:hover {
     background-color: #0e76a8;
 }
 
-.instagram:hover {
+#instagram:hover {
     background-color: #d62976;
 }
 
-.gmail:hover {
+#gmail:hover {
     background-color: #ed322c;
 }
 
