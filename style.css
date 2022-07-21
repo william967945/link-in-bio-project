@@ -113,11 +113,11 @@ ul>li {
 }
 
 .linkedin:hover {
-    background-color: #0e76a8 ;
+    background-color: #0e76a8;
 }
 
 .instagram:hover {
-    background-color: #d62976 ;
+    background-color: #d62976;
 }
 
 .gmail:hover {
@@ -161,7 +161,7 @@ ul>li>div>button {
 button:hover {
     transform: scale(1.5);
     color: white;
-    
+
 }
 
 .tooltip {
@@ -201,4 +201,3 @@ button:hover {
     visibility: visible;
     opacity: 1
 }
-
