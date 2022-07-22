@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 614.00,
+        minHeight: 600.00,
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,

@@ -5,6 +5,8 @@ html {
     font-family: 'Open Sans', sans-serif;
     background: grey;
     color: #fff;
+    height:100%;
+    width: 100%;
 }
 
 header {
@@ -165,7 +167,7 @@ ul>li>a {
 .link-white {
     transform: scale(1.5);
     color: white;
-    text-decoration: none;
+    text-decoration: none;      
 }
 
 .link:hover  {
