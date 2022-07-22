@@ -218,6 +218,7 @@ a:hover {
 }
 
 #button-gmail:hover {
+    transform: scale(1.5);
     color: white;
 }
 

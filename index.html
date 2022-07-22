@@ -107,7 +107,7 @@
     function hover(id) {
       const element = document.getElementById("img-" + id);
       element.setAttribute('src', `./images/${id}-logo-colored.gif`);
-      
+
       // check if cursor pointer is true
       // if is true, do note reset gif
     }
@@ -149,8 +149,8 @@
     }
 
     function changeColor() {
-      setInterval(incrementLoop, 2000);
-      nIntervId = setInterval(flashButton, 2000);
+      setInterval(incrementLoop, 4000);
+      nIntervId = setInterval(flashButton, 4000);
       colorList();
     }
 
@@ -188,24 +188,9 @@
           currentImg.setAttribute('src', `./images/${buttonList[index].id}-logo-colored.gif`);
 
           // if cursor is on li , do not reset 
-          console.log(buttonList[index].getAttribute('onmouseover'));
-          const onMouseOver = buttonList[index].getAttribute('onmouseover');
-
-          if (onMouseOver == true) {
-
-          } else {
-            const prevImg = document.getElementById("img-" + buttonList[prevIndex].id);
-            prevImg.setAttribute('src', `./images/${buttonList[prevIndex].id}-logo.gif`);
-          }
+          // console.log(buttonList[index].getAttribute('onmouseover'));
+          // const onMouseOver = buttonList[index].getAttribute('onmouseover');
         }
-        // else {
-        //   const currentImg = document.getElementById("img-" + buttonList[index].id);
-        //   currentImg.setAttribute('src', `./images/${buttonList[index].id}-logo.gif`);
-
-        //   // const prevImg = document.getElementById("img-" + buttonList[prevIndex].id);
-        //   // prevImg.setAttribute('src', `./images/${buttonList[prevIndex].id}-logo-colored.gif`);
-        // }
-
       } else {
         const button = document.getElementById('button-gmail');
         button.className = button.className === "button" ? "button-white" : "button";
@@ -219,11 +204,21 @@
         }
       }
 
+      // 0, 1, 2, 3, x, 0, 1, 2, 3, x...
       if (currentElement.className === `${color[index]}`) {
         prevElement.className = "color-fffa";
-        prevA.className = "link";
 
+        const prevImg = document.getElementById("img-" + buttonList[prevIndex].id);
+        prevImg.setAttribute('src', `./images/${buttonList[prevIndex].id}-logo.gif`);
+
+        if (prevIndex !== 4) {
+          prevA.className = "link";
+        } else {
+          const button = document.getElementById('button-gmail');
+          button.className = "button";
+        }
       }
+
     }
 
     function stopTextColor() {
