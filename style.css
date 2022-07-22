@@ -201,10 +201,6 @@ a:hover {
     margin: 0 auto;
 }
 
-.button-black {
-    color: black;
-}
-
 .button-white {
     display: flex;
     flex-direction: row;
@@ -221,8 +217,7 @@ a:hover {
     cursor: pointer;
 }
 
-#button:hover {
-    transform: scale(1.5);
+#button-gmail:hover {
     color: white;
 }
 

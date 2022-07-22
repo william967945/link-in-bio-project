@@ -20,7 +20,7 @@
       <li id="facebook" class="facebook" onmouseover="hover(this.id);" onmouseout="unhover(this.id);"
         onclick="stopTextColor();">
         <a class="link" href="https://www.facebook.com/profile.php?id=100004865142685">
-          <img id="img-facebook" class="link" src="./images/facebook-logo.gif" alt="facebook" width="20">
+          <img id="img-facebook" src="./images/facebook-logo.gif" alt="facebook" width="20">
           Facebook
         </a>
       </li>
@@ -64,7 +64,7 @@
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 650.00,
+        minHeight: 614.00,
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
@@ -107,23 +107,44 @@
     function hover(id) {
       const element = document.getElementById("img-" + id);
       element.setAttribute('src', `./images/${id}-logo-colored.gif`);
-
+      
+      // check if cursor pointer is true
+      // if is true, do note reset gif
     }
 
     function unhover(id) {
       const element = document.getElementById("img-" + id);
-      element.setAttribute('src', `./images/${id}-logo.gif`);
-      // element.style.backgroundColor = 'black';
+
+      const liElement = document.getElementById(id);
+
+      const li = liElement; //index 1s change once
+      const liClassName = li.className;
+      console.log(liClassName);
+
+      if (liClassName === `${color[index]}`) {
+        element.setAttribute('src', `./images/${id}-logo-colored.gif`);
+      } else if (liClassName === "color-fffa") {
+        element.setAttribute('src', `./images/${id}-logo.gif`);
+      }
+
+      let isCalled = true;
 
     }
 
-    var index = -1;
+    let index = -1;
+    let prevIndex = -1;
 
     function incrementLoop() {
       if (index >= 4) {
         index = 0;
       } else {
         index += 1;
+      }
+
+      if (index === 0) {
+        prevIndex = 4;
+      } else {
+        prevIndex = index - 1;
       }
     }
 
@@ -148,21 +169,60 @@
     }
 
     function flashButton() {
-      // console.log(buttonList[index]);
-      const element = buttonList[index];
-      // console.log(color);
-      element.className = element.className === "color-fffa" ? `${color[index]}` : "color-fffa";
-      console.log(element.className);
-      a = element.childNodes[1]; // gmail is undefind
-      if (a.className !== 'tooltip') {
-        a.className = a.className === "link" ? "link-white" : "link";
+      // 0, 1, 2, 3, 4, 0, 1, 2....
+
+      const currentElement = buttonList[index];
+      const prevElement = buttonList[prevIndex];
+
+      currentElement.className = currentElement.className === "color-fffa" ? `${color[index]}` : "color-fffa";
+      console.log(currentElement.className);
+
+      const currentA = currentElement.childNodes[1]; // gmail is undefind
+      const prevA = prevElement.childNodes[1];
+
+      if (currentA.className !== 'tooltip') {
+        currentA.className = currentA.className === "link" ? "link-white" : "link";
+
+        if (currentElement.className === `${color[index]}`) {
+          const currentImg = document.getElementById("img-" + buttonList[index].id);
+          currentImg.setAttribute('src', `./images/${buttonList[index].id}-logo-colored.gif`);
+
+          // if cursor is on li , do not reset 
+          console.log(buttonList[index].getAttribute('onmouseover'));
+          const onMouseOver = buttonList[index].getAttribute('onmouseover');
+
+          if (onMouseOver == true) {
+
+          } else {
+            const prevImg = document.getElementById("img-" + buttonList[prevIndex].id);
+            prevImg.setAttribute('src', `./images/${buttonList[prevIndex].id}-logo.gif`);
+          }
+        }
+        // else {
+        //   const currentImg = document.getElementById("img-" + buttonList[index].id);
+        //   currentImg.setAttribute('src', `./images/${buttonList[index].id}-logo.gif`);
+
+        //   // const prevImg = document.getElementById("img-" + buttonList[prevIndex].id);
+        //   // prevImg.setAttribute('src', `./images/${buttonList[prevIndex].id}-logo-colored.gif`);
+        // }
+
       } else {
-        console.log('bbbbbbbbbbbbb');
         const button = document.getElementById('button-gmail');
-        console.log(button.className);
-        //從找到button 改白色的地方開始
         button.className = button.className === "button" ? "button-white" : "button";
-        console.log(button.className);
+
+        if (currentElement.className === `${color[index]}`) {
+          const currentImg = document.getElementById("img-" + buttonList[index].id);
+          currentImg.setAttribute('src', `./images/${buttonList[index].id}-logo-colored.gif`);
+        } else {
+          const currentImg = document.getElementById("img-" + buttonList[index].id);
+          currentImg.setAttribute('src', `./images/${buttonList[index].id}-logo.gif`);
+        }
+      }
+
+      if (currentElement.className === `${color[index]}`) {
+        prevElement.className = "color-fffa";
+        prevA.className = "link";
+
       }
     }
 
