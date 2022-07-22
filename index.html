@@ -19,25 +19,25 @@
     <ul>
       <li id="facebook" class="facebook" onmouseover="hover(this.id);" onmouseout="unhover(this.id);"
         onclick="stopTextColor();">
-        <a href="https://www.facebook.com/profile.php?id=100004865142685">
-          <img id="img-facebook" src="./images/facebook-logo.gif" alt="facebook" width="20">
+        <a class="link" href="https://www.facebook.com/profile.php?id=100004865142685">
+          <img id="img-facebook" class="link" src="./images/facebook-logo.gif" alt="facebook" width="20">
           Facebook
         </a>
       </li>
       <li id="github" class="github">
-        <a href="https://github.com/william967945">
+        <a class="link" href="https://github.com/william967945">
           <img id="img-github" src="./images/github-logo.gif" alt="GitHub" width="20">
           GitHub
         </a>
       </li>
       <li id="linkedin" class="linkedin" onmouseover="hover(this.id);" onmouseout="unhover(this.id);">
-        <a href="https://www.linkedin.com/in/william967945">
+        <a class="link" href="https://www.linkedin.com/in/william967945">
           <img id="img-linkedin" src="./images/linkedin-logo.gif" alt="Linkedin" width="20">
           Linkedin
         </a>
       </li>
       <li id="instagram" class="instagram" onmouseover="hover(this.id);" onmouseout="unhover(this.id);">
-        <a href="https://www.instagram.com/c.han_liu">
+        <a class="link" href="https://www.instagram.com/c.han_liu">
           <img id="img-instagram" src="./images/instagram-logo.gif" alt="Instagram" width="20">
           Instagram
         </a>
@@ -45,7 +45,7 @@
       <li id="gmail" class="gmail" onmouseover="hover(this.id);" onmouseout="unhover(this.id);">
         <div class="tooltip">
           <span class="tooltiptext" id="myTooltip"></span>
-          <button id="button-gmail" onclick="myFunction();" onmouseout="outFunc();">
+          <button id="button-gmail" class="button" onclick="myFunction();" onmouseout="outFunc();">
             <img id="img-gmail" src="./images/gmail-logo.gif" alt="Gmail" width="20">
             william967948@gmail.com
           </button>
@@ -148,11 +148,22 @@
     }
 
     function flashButton() {
-      console.log(buttonList[index]);
+      // console.log(buttonList[index]);
       const element = buttonList[index];
-      console.log(color);
+      // console.log(color);
       element.className = element.className === "color-fffa" ? `${color[index]}` : "color-fffa";
       console.log(element.className);
+      a = element.childNodes[1]; // gmail is undefind
+      if (a.className !== 'tooltip') {
+        a.className = a.className === "link" ? "link-white" : "link";
+      } else {
+        console.log('bbbbbbbbbbbbb');
+        const button = document.getElementById('button-gmail');
+        console.log(button.className);
+        //從找到button 改白色的地方開始
+        button.className = button.className === "button" ? "button-white" : "button";
+        console.log(button.className);
+      }
     }
 
     function stopTextColor() {

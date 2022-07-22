@@ -156,7 +156,25 @@ ul>li>a {
     gap: 0.5em;
 }
 
-a {
+.link {
+    color: black;
+    text-decoration: none;
+    transition: transform .2s;
+}
+
+.link-white {
+    transform: scale(1.5);
+    color: white;
+    text-decoration: none;
+    /* background-image: url("./images/facebook-logo-colored.gif"); */
+}
+
+.link:hover  {
+    transform: scale(1.5);
+    color: white;
+}
+
+/* a {
     color: black;
     text-decoration: none;
     transition: transform .2s;
@@ -165,9 +183,10 @@ a {
 a:hover {
     transform: scale(1.5);
     color: white;
-}
+} */
 
-ul>li>div>button {
+/* ul>li>div>button */
+.button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -182,10 +201,29 @@ ul>li>div>button {
     margin: 0 auto;
 }
 
-button:hover {
+.button-black {
+    color: black;
+}
+
+.button-white {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 0.5em;
+    color: white;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    margin: 0 auto;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+#button:hover {
     transform: scale(1.5);
     color: white;
-
 }
 
 .tooltip {
