@@ -1,9 +1,11 @@
 {
-  "applinks": {
+   "applinks": {
       "details": [
-           {
-             "appIDs": [ "GT7EGK54DR.com.williamtest.hello"],
-             "components": [
+         {
+            "appIDs": [
+               "GT7EGK54DR.com.williamtest.hello"
+            ],
+            "components": [
                {
                   "#": "no_universal_links",
                   "exclude": true,
@@ -20,18 +22,23 @@
                },
                {
                   "/": "/help/*",
-                  "?": { "articleNumber": "????" },
+                  "?": {
+                     "articleNumber": "????"
+                  },
                   "comment": "Matches any URL with a path that starts with /help/ and that has a query item with name 'articleNumber' and a value of exactly four characters."
                }
-             ]
-           }
-       ]
+            ]
+         }
+      ]
    },
    "webcredentials": {
-      "apps": [ "GT7EGK54DR.com.williamtest.hello" ]
+      "apps": [
+         "GT7EGK54DR.com.williamtest.hello"
+      ]
    },
-
-    "appclips": {
-        "apps": ["GT7EGK54DR.com.williamtest.hello.Clip"]
-    }
+   "appclips": {
+      "apps": [
+         "GT7EGK54DR.com.williamtest.hello.Clip"
+      ]
+   }
 }
